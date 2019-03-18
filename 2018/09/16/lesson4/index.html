@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>类型转换 | NoobPlus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PHP 中 , 变量的类型是可以随时转换的 , 非常的灵活最常见的是字符转与数字之间的相互转换 ,或者是数字 / 字符串 -&amp;gt;  布尔值的转换 字符串到数字的转换从左到右截取 , 直道碰到不合法的数字 , 截取下来的部分转换为数字 123456789$a = &apos;12&apos;;$b = $a + 3;var_dump($b); //int 15$a = &apos;12.5hello&apos;; //$a = &apos;12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类型转换">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/lesson4/index.html">
+<meta property="og:site_name" content="NoobPlus">
+<meta property="og:description" content="PHP 中 , 变量的类型是可以随时转换的 , 非常的灵活最常见的是字符转与数字之间的相互转换 ,或者是数字 / 字符串 -&amp;gt;  布尔值的转换 字符串到数字的转换从左到右截取 , 直道碰到不合法的数字 , 截取下来的部分转换为数字 123456789$a = &apos;12&apos;;$b = $a + 3;var_dump($b); //int 15$a = &apos;12.5hello&apos;; //$a = &apos;12">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-16T14:48:20.568Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="类型转换">
+<meta name="twitter:description" content="PHP 中 , 变量的类型是可以随时转换的 , 非常的灵活最常见的是字符转与数字之间的相互转换 ,或者是数字 / 字符串 -&amp;gt;  布尔值的转换 字符串到数字的转换从左到右截取 , 直道碰到不合法的数字 , 截取下来的部分转换为数字 123456789$a = &apos;12&apos;;$b = $a + 3;var_dump($b); //int 15$a = &apos;12.5hello&apos;; //$a = &apos;12">
+  
+    <link rel="alternate" href="/atom.xml" title="NoobPlus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">NoobPlus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">档案</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-lesson4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson4/" class="article-date">
+  <time datetime="2018-09-16T14:35:28.545Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      类型转换
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>PHP 中 , 变量的类型是可以随时转换的 , 非常的灵活<br>最常见的是字符转与数字之间的相互转换 ,<br>或者是数字 / 字符串 -&gt;  布尔值的转换</p>
+<h2 id="字符串到数字的转换"><a href="#字符串到数字的转换" class="headerlink" title="字符串到数字的转换"></a>字符串到数字的转换</h2><p>从左到右截取 , 直道碰到不合法的数字 , 截取下来的部分转换为数字</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="string">'12'</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> + 3;</span><br><span class="line">var_dump(<span class="variable">$b</span>); //int 15</span><br><span class="line"><span class="variable">$a</span> = <span class="string">'12.5hello'</span>; //<span class="variable">$a</span> = <span class="string">'12.5hello99'</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> +3;</span><br><span class="line">var_dump(<span class="variable">$b</span>); //<span class="built_in">float</span> 15.5</span><br><span class="line"><span class="variable">$a</span> = <span class="string">'word12.5hello'</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> + 3;</span><br><span class="line">var_dump(<span class="variable">$b</span>); // int 3</span><br></pre></td></tr></table></figure>
+<h2 id="数字到字符串的转换"><a href="#数字到字符串的转换" class="headerlink" title="数字到字符串的转换"></a>数字到字符串的转换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = 123;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> . <span class="string">'hello'</span>;</span><br><span class="line">var_dump(<span class="variable">$b</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="数字-字符串-数组等到布尔型值的转换"><a href="#数字-字符串-数组等到布尔型值的转换" class="headerlink" title="数字 / 字符串 / 数组等到布尔型值的转换"></a>数字 / 字符串 / 数组等到布尔型值的转换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$b</span> = 3;</span><br><span class="line"><span class="keyword">if</span>( <span class="variable">$b</span> ) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'b is true'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'b is false'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if 判断的应该是布尔型的值 , 那数字 3 被转成布尔型来理解<br>那它到底应该理解为真还是假呢 ?</p>
+<h2 id="以下值-都被理解为成布尔型值的假"><a href="#以下值-都被理解为成布尔型值的假" class="headerlink" title="以下值 , 都被理解为成布尔型值的假"></a>以下值 , 都被理解为成布尔型值的假</h2><h2 id="‘’-’0’-0-0-0-false-NULL-array"><a href="#‘’-’0’-0-0-0-false-NULL-array" class="headerlink" title="‘’,’0’,0,0.0,false,NULL,array();"></a>‘’,’0’,0,0.0,false,NULL,array();</h2><h2 id="而其它值-都被当成布尔型的真"><a href="#而其它值-都被当成布尔型的真" class="headerlink" title="而其它值 , 都被当成布尔型的真"></a>而其它值 , 都被当成布尔型的真</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="string">''</span> == <span class="literal">false</span>) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">' 空字符串果然假 '</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="empty-var-—-检查一个变量是否为空"><a href="#empty-var-—-检查一个变量是否为空" class="headerlink" title="empty(var) —  检查一个变量是否为空"></a>empty(var) —  检查一个变量是否为空</h2><p>如果 var  是非空或非零的值，则 empty()  返回 FALSE<br>换句话 说， “” 、 0 、 0.0 、 “0” 、 NULL 、 FALSE 、 array();<br>以及没有任何属性的对象都将被认为是空的，如果 var  为空，则返回 TRUE</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$arr</span> = array();</span><br><span class="line"><span class="keyword">if</span>(empty(<span class="variable">$arr</span>)) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">' 变量为空 '</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson4/" data-id="cjog2eb8q000cagqtk60dalnn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/16/lesson5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          赋值
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/16/lesson3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">调试打印变量</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/lesson15/">vue将毫秒数转化为正常日期格式。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson14/">出现Please make sure you have the correct access rights and the repository exists.问题已解决。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson13/">我尝试第一个例子，但是遇到了错误：events.js:160 throw er; // Unhandled &#39;error&#39; event</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/06/lesson12/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/02/lesson11/">GIT的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">档案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

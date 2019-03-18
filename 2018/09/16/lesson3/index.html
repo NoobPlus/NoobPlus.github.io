@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>调试打印变量 | NoobPlus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="开发程序的时候 , 不可避免的要把变量的值打印出来看看 如何调试打印变量 ?echo  字符串 , 数字 print_r  打印层次化的数据 , 比如 : 数组 , 对象 var_dump  打印变量的类型及其值 [ 调试代码比较方便 ] 1234567891011121314151617$a = &apos;hello&apos;;$b = array(1,2,&quot;3&quot;);$c = false;$d = null;$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="调试打印变量">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/lesson3/index.html">
+<meta property="og:site_name" content="NoobPlus">
+<meta property="og:description" content="开发程序的时候 , 不可避免的要把变量的值打印出来看看 如何调试打印变量 ?echo  字符串 , 数字 print_r  打印层次化的数据 , 比如 : 数组 , 对象 var_dump  打印变量的类型及其值 [ 调试代码比较方便 ] 1234567891011121314151617$a = &apos;hello&apos;;$b = array(1,2,&quot;3&quot;);$c = false;$d = null;$">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-16T14:32:51.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="调试打印变量">
+<meta name="twitter:description" content="开发程序的时候 , 不可避免的要把变量的值打印出来看看 如何调试打印变量 ?echo  字符串 , 数字 print_r  打印层次化的数据 , 比如 : 数组 , 对象 var_dump  打印变量的类型及其值 [ 调试代码比较方便 ] 1234567891011121314151617$a = &apos;hello&apos;;$b = array(1,2,&quot;3&quot;);$c = false;$d = null;$">
+  
+    <link rel="alternate" href="/atom.xml" title="NoobPlus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">NoobPlus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">档案</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-lesson3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson3/" class="article-date">
+  <time datetime="2018-09-16T14:24:32.512Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      调试打印变量
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开发程序的时候 , 不可避免的要把变量的值打印出来看看</p>
+<h2 id="如何调试打印变量"><a href="#如何调试打印变量" class="headerlink" title="如何调试打印变量 ?"></a>如何调试打印变量 ?</h2><p>echo  字符串 , 数字</p>
+<p>print_r  打印层次化的数据 , 比如 : 数组 , 对象</p>
+<p>var_dump  打印变量的类型及其值 [ 调试代码比较方便 ]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="string">'hello'</span>;</span><br><span class="line"><span class="variable">$b</span> = array(1,2,<span class="string">"3"</span>);</span><br><span class="line"><span class="variable">$c</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="variable">$d</span> = null;</span><br><span class="line"><span class="variable">$e</span> = 18;</span><br><span class="line"><span class="variable">$f</span> = <span class="literal">true</span>;</span><br><span class="line">// 布尔型的 <span class="literal">true</span> 会打印出 1,<span class="literal">false</span> 和 null 什么都不显示</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$a</span>,<span class="variable">$b</span>,<span class="variable">$c</span>,<span class="variable">$d</span>,<span class="variable">$e</span>,<span class="variable">$f</span>,<span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line">//print_r  打印层次化的数据 , 比如数组和对象</span><br><span class="line">print_r(<span class="variable">$b</span>);</span><br><span class="line">print_r(<span class="variable">$c</span>);</span><br><span class="line">print_r(<span class="variable">$d</span>);</span><br><span class="line">print_r(<span class="variable">$f</span>);</span><br><span class="line">// 不要用 <span class="built_in">echo</span> 和 print_r 打印布尔型的值 , 因为会干扰我们</span><br><span class="line">// 用 var_dump 打印布尔和 null</span><br><span class="line">var_dump(<span class="variable">$c</span>);</span><br><span class="line">var_dump(<span class="variable">$d</span>);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson3/" data-id="cjog2eb8w000fagqttypjfsv5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/16/lesson4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          类型转换
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/16/lesson2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">类型检测</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/lesson15/">vue将毫秒数转化为正常日期格式。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson14/">出现Please make sure you have the correct access rights and the repository exists.问题已解决。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson13/">我尝试第一个例子，但是遇到了错误：events.js:160 throw er; // Unhandled &#39;error&#39; event</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/06/lesson12/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/02/lesson11/">GIT的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">档案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

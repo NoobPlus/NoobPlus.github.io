@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>NoobPlus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="NoobPlus">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="NoobPlus">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NoobPlus">
+  
+    <link rel="alternate" href="/atom.xml" title="NoobPlus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">NoobPlus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">档案</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-lesson5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson5/" class="article-date">
+  <time datetime="2018-09-16T14:54:00.039Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/lesson5/">赋值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>赋值有两种方式 :</p>
+<ol>
+<li>传值赋值 ;( 两个人看两台电视同一个台 )</li>
+<li>引用赋值 ;( 两个人看同一台电视 )<h2 id="1-传值赋值"><a href="#1-传值赋值" class="headerlink" title="1. 传值赋值"></a>1. 传值赋值</h2>变量名其实不是贴在盒子上的 , 而是有个变量表 ( 像班级的花名册 )<br>变量值和变量类型放在盒子里面 ; 变量表中的变量名指向它所对应的盒子</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$li</span> = 23;</span><br><span class="line"><span class="variable">$wang</span> = <span class="variable">$li</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$li</span>, <span class="string">'~'</span>, <span class="variable">$wang</span>; //23 ~23</span><br></pre></td></tr></table></figure>
+<h2 id="改变-li-的值-wang-的值会发生变换吗"><a href="#改变-li-的值-wang-的值会发生变换吗" class="headerlink" title="改变 $li 的值 ,$wang 的值会发生变换吗"></a>改变 $li 的值 ,$wang 的值会发生变换吗</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$li</span> = 99;</span><br><span class="line"><span class="variable">$wang</span> = <span class="variable">$li</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$li</span>, <span class="string">'~'</span> ,<span class="variable">$wang</span>; //99 ~99</span><br></pre></td></tr></table></figure>
+<p>这个赋值过程 , 是把 $li 的值 , 赋给 $wang</p>
+<h2 id="引用赋值"><a href="#引用赋值" class="headerlink" title="引用赋值"></a>引用赋值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="string">'tvb'</span>;</span><br><span class="line"><span class="variable">$b</span> = &amp;<span class="variable">$a</span>; //<span class="variable">$a</span>,<span class="variable">$b</span> 共同指向同一个值</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$a</span>,<span class="string">'~'</span>,<span class="variable">$b</span>; //tvb ~tvb</span><br></pre></td></tr></table></figure>
+<p>加 &amp; 引用赋值</p>
+<p>改变 $a 的值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="string">'btv'</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$a</span>,<span class="string">'~'</span>,<span class="variable">$b</span>;//btv ~btv</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson5/" data-id="cjog2eb8j0008agqtuve2ugu1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lesson4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson4/" class="article-date">
+  <time datetime="2018-09-16T14:35:28.545Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/lesson4/">类型转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>PHP 中 , 变量的类型是可以随时转换的 , 非常的灵活<br>最常见的是字符转与数字之间的相互转换 ,<br>或者是数字 / 字符串 -&gt;  布尔值的转换</p>
+<h2 id="字符串到数字的转换"><a href="#字符串到数字的转换" class="headerlink" title="字符串到数字的转换"></a>字符串到数字的转换</h2><p>从左到右截取 , 直道碰到不合法的数字 , 截取下来的部分转换为数字</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="string">'12'</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> + 3;</span><br><span class="line">var_dump(<span class="variable">$b</span>); //int 15</span><br><span class="line"><span class="variable">$a</span> = <span class="string">'12.5hello'</span>; //<span class="variable">$a</span> = <span class="string">'12.5hello99'</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> +3;</span><br><span class="line">var_dump(<span class="variable">$b</span>); //<span class="built_in">float</span> 15.5</span><br><span class="line"><span class="variable">$a</span> = <span class="string">'word12.5hello'</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> + 3;</span><br><span class="line">var_dump(<span class="variable">$b</span>); // int 3</span><br></pre></td></tr></table></figure>
+<h2 id="数字到字符串的转换"><a href="#数字到字符串的转换" class="headerlink" title="数字到字符串的转换"></a>数字到字符串的转换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = 123;</span><br><span class="line"><span class="variable">$b</span> = <span class="variable">$a</span> . <span class="string">'hello'</span>;</span><br><span class="line">var_dump(<span class="variable">$b</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="数字-字符串-数组等到布尔型值的转换"><a href="#数字-字符串-数组等到布尔型值的转换" class="headerlink" title="数字 / 字符串 / 数组等到布尔型值的转换"></a>数字 / 字符串 / 数组等到布尔型值的转换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$b</span> = 3;</span><br><span class="line"><span class="keyword">if</span>( <span class="variable">$b</span> ) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'b is true'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'b is false'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if 判断的应该是布尔型的值 , 那数字 3 被转成布尔型来理解<br>那它到底应该理解为真还是假呢 ?</p>
+<h2 id="以下值-都被理解为成布尔型值的假"><a href="#以下值-都被理解为成布尔型值的假" class="headerlink" title="以下值 , 都被理解为成布尔型值的假"></a>以下值 , 都被理解为成布尔型值的假</h2><h2 id="‘’-’0’-0-0-0-false-NULL-array"><a href="#‘’-’0’-0-0-0-false-NULL-array" class="headerlink" title="‘’,’0’,0,0.0,false,NULL,array();"></a>‘’,’0’,0,0.0,false,NULL,array();</h2><h2 id="而其它值-都被当成布尔型的真"><a href="#而其它值-都被当成布尔型的真" class="headerlink" title="而其它值 , 都被当成布尔型的真"></a>而其它值 , 都被当成布尔型的真</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="string">''</span> == <span class="literal">false</span>) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">' 空字符串果然假 '</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="empty-var-—-检查一个变量是否为空"><a href="#empty-var-—-检查一个变量是否为空" class="headerlink" title="empty(var) —  检查一个变量是否为空"></a>empty(var) —  检查一个变量是否为空</h2><p>如果 var  是非空或非零的值，则 empty()  返回 FALSE<br>换句话 说， “” 、 0 、 0.0 、 “0” 、 NULL 、 FALSE 、 array();<br>以及没有任何属性的对象都将被认为是空的，如果 var  为空，则返回 TRUE</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$arr</span> = array();</span><br><span class="line"><span class="keyword">if</span>(empty(<span class="variable">$arr</span>)) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">' 变量为空 '</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson4/" data-id="cjog2eb8q000cagqtk60dalnn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lesson3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson3/" class="article-date">
+  <time datetime="2018-09-16T14:24:32.512Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/lesson3/">调试打印变量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开发程序的时候 , 不可避免的要把变量的值打印出来看看</p>
+<h2 id="如何调试打印变量"><a href="#如何调试打印变量" class="headerlink" title="如何调试打印变量 ?"></a>如何调试打印变量 ?</h2><p>echo  字符串 , 数字</p>
+<p>print_r  打印层次化的数据 , 比如 : 数组 , 对象</p>
+<p>var_dump  打印变量的类型及其值 [ 调试代码比较方便 ]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="string">'hello'</span>;</span><br><span class="line"><span class="variable">$b</span> = array(1,2,<span class="string">"3"</span>);</span><br><span class="line"><span class="variable">$c</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="variable">$d</span> = null;</span><br><span class="line"><span class="variable">$e</span> = 18;</span><br><span class="line"><span class="variable">$f</span> = <span class="literal">true</span>;</span><br><span class="line">// 布尔型的 <span class="literal">true</span> 会打印出 1,<span class="literal">false</span> 和 null 什么都不显示</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$a</span>,<span class="variable">$b</span>,<span class="variable">$c</span>,<span class="variable">$d</span>,<span class="variable">$e</span>,<span class="variable">$f</span>,<span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line">//print_r  打印层次化的数据 , 比如数组和对象</span><br><span class="line">print_r(<span class="variable">$b</span>);</span><br><span class="line">print_r(<span class="variable">$c</span>);</span><br><span class="line">print_r(<span class="variable">$d</span>);</span><br><span class="line">print_r(<span class="variable">$f</span>);</span><br><span class="line">// 不要用 <span class="built_in">echo</span> 和 print_r 打印布尔型的值 , 因为会干扰我们</span><br><span class="line">// 用 var_dump 打印布尔和 null</span><br><span class="line">var_dump(<span class="variable">$c</span>);</span><br><span class="line">var_dump(<span class="variable">$d</span>);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson3/" data-id="cjog2eb8w000fagqttypjfsv5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lesson2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson2/" class="article-date">
+  <time datetime="2018-09-16T14:22:06.049Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/lesson2/">类型检测</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>检测一个变量 ,php 是把它存储成一个什么样的类型的<br>对于 php 而言获取它的变量类型是很简单的<br>因为箱子里面已经存储了它的变量类型<br>gettype —  获取变量的类型 [ 现成的系统函数 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">echo</span> gettype(<span class="variable">$a</span>);</span><br><span class="line"><span class="variable">$b</span> = <span class="string">"1"</span>;</span><br><span class="line"><span class="built_in">echo</span> gettype(<span class="variable">$b</span>);</span><br><span class="line"><span class="variable">$c</span> = 1.11;</span><br><span class="line"><span class="built_in">echo</span> gettype(<span class="variable">$c</span>);</span><br><span class="line"><span class="variable">$d</span> = <span class="string">'hello'</span>;</span><br><span class="line"><span class="built_in">echo</span> gettype(<span class="variable">$d</span>);</span><br><span class="line"><span class="variable">$e</span> = null;</span><br><span class="line"><span class="built_in">echo</span> gettype(<span class="variable">$e</span>);</span><br></pre></td></tr></table></figure>
+<p>判断变量是否是某种类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">is_float()[is_double] 检测变量是否为浮点型</span><br><span class="line">is_int()[is_integer] 检测变量是否为整型</span><br><span class="line">is_string() 检测变量是否为字符串</span><br><span class="line">is_object() 检测变量是否为对象</span><br><span class="line">is_array() 检测变量是否为数组</span><br><span class="line">is_resource 检测变量是否为资源类型</span><br><span class="line">is_bool 检测变量是否是布尔型</span><br><span class="line">is_null 检测变量是否为 NULL</span><br><span class="line"><span class="variable">$a</span> = <span class="string">'hello'</span>;</span><br><span class="line"><span class="keyword">if</span>(is_string(<span class="variable">$a</span>)) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'a 是字符串 '</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'a 不是字符串 '</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson2/" data-id="cjog2eb8m000aagqtxveeli4h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lesson1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson1/" class="article-date">
+  <time datetime="2018-09-16T14:20:08.995Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/lesson1/">变量检测</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>echo  一个不存在的变量 , 会报 notice 级别的错误 ,<br>所以要检测一下这个变量是否存在<br>如何检测变量是否存在 ?<br>isset —  检测变量是否设置<br>已声明的变量返回 true, 未声明的变量返回 false.<br>检测一个变量是否存在 :<br>就是看花名册中是否有这个变量名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$b</span> = null;</span><br><span class="line"><span class="variable">$c</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="variable">$d</span> = 0;</span><br><span class="line"><span class="variable">$e</span> = <span class="string">''</span>;</span><br><span class="line">// 分别检测上述变量是否存在</span><br><span class="line"><span class="keyword">if</span>(isset(<span class="variable">$a</span>)) &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">' 变量 b 存在 '</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">' 变量 b 不存在 '</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于值为 NULL  的变量 , 也返回 false, 因为 null 没有值<br>未曾声明的变量 , 当然也不存在</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson1/" data-id="cjog2eb7o0001agqt3okn53pu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lesson" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/lesson/" class="article-date">
+  <time datetime="2018-09-16T13:39:36.714Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/lesson/">变量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>整形，浮点型，字符串，布尔型，数组，对象，NULL，资源<br>变量是个盒子，盒子里面装的是变量的值<br>不同的盒子就是变量类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1) 整形 [<span class="built_in">integer</span>] 数学中的整数</span><br><span class="line">2) 浮点型 [<span class="built_in">float</span>,double] 数学中的小数</span><br><span class="line">3) 字符串 [strong] 一串字符</span><br><span class="line">4) 布尔 [boolean] 真假</span><br><span class="line">5) 数组 [array] 键值对复合数据</span><br><span class="line">6) 对象 [Object] [在后面的面向对象中会学到]</span><br><span class="line">7) NULL 没有值</span><br><span class="line">8) 资源 [resource] “吸管”</span><br></pre></td></tr></table></figure>
+<p>变量有 8 种类型 , 不必死记硬背 , 在实际运用中加深理解</p>
+<ol>
+<li>如何区分变量类型 ?<br>在计算机的世界里 , 最终只有两个数字 ,0,1<br>都是一对 0,1 , 如何区分是 字符串的 0100 0001 表示字母 A<br>还是理解为数字 65  呢 ?</li>
+</ol>
+<p>NULL 是什么 ?<br>NULL 类型只标注了它的类型为 NULL<br>它的值的字段是空的 ,NULL 是没有值的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = 3;// 整型</span><br><span class="line"><span class="variable">$b</span> = 3.14;// 浮点型</span><br><span class="line"><span class="variable">$c</span> = null;//null 型</span><br><span class="line"><span class="variable">$d</span> = <span class="string">'hello'</span>;// 字符串</span><br><span class="line"><span class="variable">$e</span> = <span class="literal">true</span>;// 布尔型</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$D</span>;</span><br></pre></td></tr></table></figure>
+<p>变量名称的命名规范 :<br>[a-zA-Z0-9] 和下划线 (_)<br>1) 变量名是区分大小写的<br>2) 不能以数字开头</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span></span><br><span class="line"><span class="variable">$_</span></span><br><span class="line"><span class="variable">$_</span>%</span><br><span class="line"><span class="variable">$3c</span></span><br><span class="line"><span class="variable">$c3</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/lesson/" data-id="cjog2eb7f0000agqtenaf0xh9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/lesson15/">vue将毫秒数转化为正常日期格式。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson14/">出现Please make sure you have the correct access rights and the repository exists.问题已解决。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson13/">我尝试第一个例子，但是遇到了错误：events.js:160 throw er; // Unhandled &#39;error&#39; event</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/06/lesson12/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/02/lesson11/">GIT的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">档案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

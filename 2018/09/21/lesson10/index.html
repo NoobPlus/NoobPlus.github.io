@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>php单引号和双引号的区别与用法 | NoobPlus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="php里的单引号把内容当成纯文本，不会经过服务器翻译。而双引号则与此相反。里面的内容会经过服务器处理(process). 举个简单的例子：$foo=”data”;echo ‘$foo’;                        //单引号输出$fooecho “$foo”;                        //双引号输出data 单引号不能处理变量和转义字符(除了\和\’这两个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php单引号和双引号的区别与用法">
+<meta property="og:url" content="http://yoursite.com/2018/09/21/lesson10/index.html">
+<meta property="og:site_name" content="NoobPlus">
+<meta property="og:description" content="php里的单引号把内容当成纯文本，不会经过服务器翻译。而双引号则与此相反。里面的内容会经过服务器处理(process). 举个简单的例子：$foo=”data”;echo ‘$foo’;                        //单引号输出$fooecho “$foo”;                        //双引号输出data 单引号不能处理变量和转义字符(除了\和\’这两个">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-21T14:42:32.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php单引号和双引号的区别与用法">
+<meta name="twitter:description" content="php里的单引号把内容当成纯文本，不会经过服务器翻译。而双引号则与此相反。里面的内容会经过服务器处理(process). 举个简单的例子：$foo=”data”;echo ‘$foo’;                        //单引号输出$fooecho “$foo”;                        //双引号输出data 单引号不能处理变量和转义字符(除了\和\’这两个">
+  
+    <link rel="alternate" href="/atom.xml" title="NoobPlus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">NoobPlus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">档案</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-lesson10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/21/lesson10/" class="article-date">
+  <time datetime="2018-09-21T14:39:18.214Z" itemprop="datePublished">2018-09-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php单引号和双引号的区别与用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="php里的单引号把内容当成纯文本，不会经过服务器翻译。而双引号则与此相反。里面的内容会经过服务器处理-process-举个简单的例子："><a href="#php里的单引号把内容当成纯文本，不会经过服务器翻译。而双引号则与此相反。里面的内容会经过服务器处理-process-举个简单的例子：" class="headerlink" title="php里的单引号把内容当成纯文本，不会经过服务器翻译。而双引号则与此相反。里面的内容会经过服务器处理(process). 举个简单的例子："></a>php里的单引号把内容当成纯文本，不会经过服务器翻译。而双引号则与此相反。里面的内容会经过服务器处理(process). 举个简单的例子：</h2><p>$foo=”data”;<br>echo ‘$foo’;                        //单引号输出$foo<br>echo “$foo”;                        //双引号输出data</p>
+<p>单引号不能处理变量和转义字符(除了\和\’这两个），要输出下面的字符串</p>
+<p>what’s my name?</p>
+<p>可以这么来写：</p>
+<p> echo “what’s my name?”;  //最简单的写法，单引号和双引号不产生冲突(conflict）<br> echo ‘what\’ my name?’;  用斜杠转义</p>
+<p>正如你所看到的，在单引号串中甚至反斜杠也失去了他的扩展含义（除了插入反斜杠\和插入单引号\’）。所以，当你想在字串中进行变量代换和包 含\n（换行符）等转义序列时，你应该使用双引号。单引号串可以用在其他任何地方，脚本中使用单引号串处理速度会更快些，因为PHP语法分析器对单引号串 的处理方式比较单纯，而双引号的处理由于串内部也需要解析，因此更复杂些，所以处理速度略慢。<br>写一个windows无效文件名替换函数。（windows文件名无效字符有9个：<br>/ 去掉文件名中的无效字符,如 \ / : * ? “ &lt; &gt; |<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> replaceBadChar(<span class="variable">$fileName</span>)</span><br><span class="line">&#123;</span><br><span class="line">    // 去掉文件名中的无效字符,如 \ / : * ? <span class="string">" &lt; &gt; | </span></span><br><span class="line"><span class="string">    <span class="variable">$fileName</span>=str_replace('\\','_',<span class="variable">$fileName</span>);</span></span><br><span class="line"><span class="string">    <span class="variable">$fileName</span>=str_replace('/','_',<span class="variable">$fileName</span>);</span></span><br><span class="line"><span class="string">    <span class="variable">$fileName</span>=str_replace(':','_',<span class="variable">$fileName</span>);</span></span><br><span class="line"><span class="string">    <span class="variable">$fileName</span>=str_replace('*','_',<span class="variable">$fileName</span>);</span></span><br><span class="line"><span class="string">    <span class="variable">$fileName</span>=str_replace('?','_',<span class="variable">$fileName</span>);</span></span><br><span class="line"><span class="string">    <span class="variable">$fileName</span>=str_replace('"</span><span class="string">','</span>_<span class="string">',$fileName);</span></span><br><span class="line"><span class="string">    $fileName=str_replace('</span>&lt;<span class="string">','</span>_<span class="string">',$fileName);</span></span><br><span class="line"><span class="string">    $fileName=str_replace('</span>&gt;<span class="string">','</span>_<span class="string">',$fileName);</span></span><br><span class="line"><span class="string">    $fileName=str_replace('</span>|<span class="string">','</span>_<span class="string">',$fileName);</span></span><br><span class="line"><span class="string">    return $fileName;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">$str='</span>\/:*?<span class="string">"&lt;&gt;|';</span></span><br><span class="line"><span class="string">echo replaceBadChar(<span class="variable">$str</span>);</span></span><br></pre></td></tr></table></figure></p>
+<p>最开始我把他们都用反斜杠转义了，结果只输出前1个，因为只有反斜杠和单引号需要在单引号中转义，其他都不需要。</p>
+<p>还有一点的是,str_replace只是简单的字符串替换，与正则无关，所以上面的改成双引号也是ok的。<br>如果要输出含有变量的字符串时就必须小心点，否则很可能产生错误。</p>
+<pre><code>$email=$_POST[&apos;email&apos;];
+</code></pre><p>现在要输出this is your  email $email;可以有两个方式</p>
+<p>  echo “this is your email $email”;  //双引号服务器会自动解析<br>  echo ‘this is your email’.$email; //用连字符和纯字符串和变量链接起来</p>
+<p>  一旦涉及到Mysql中的sql语句，就更得小心了。从简单说起，sql语句，其中的条件是常量</p>
+<pre><code>SELECE *  FROM  email_table WHERE username=&quot;abc&quot;;
+</code></pre><p>php中可以写成<br>       $query=”SELECE * FROM  email_table WHERE username=’abc’”;//query语句一定要用双引号括起来</p>
+<p>假设查询的条件是变量,如$abc=$_POST[‘username’];<br>可以写成<br>            $query=”SELECT * FROM email_table WHERE  username=’ “.$abc.” ‘ “;</p>
+<p>可以分成几步理解：<br>1.”SELECT * FROM email_table WHERE  username=’ “ 纯字符串</p>
+<ol start="2">
+<li>.连接符，用来链接后面的字符<br>3.$abc 显示变量的值<br>4..” ‘ “连字符链接后面的单引号（为了与条件中的第一个单引号配对）<br>其实不必这么复杂，可以这么写<br>$query=”SELECT * FROM email_table WHERE username=’$abc’ “;<br>可以这么理解,双引号内部的全都要被服务器解析，单引号只是当成普通字符而已.</li>
+</ol>
+<p>再复杂一点<br>$user=array (”name”=&gt; $_REQUEST[‘user_name‘,”age”=&gt;$_REQUEST[‘age’];//<br>$abc=array(“name”=&gt;$_POST[‘username’],”age”=&gt;$_POST[‘age’]);<br>$abc为数组变量，则写成<br>$query=”SELECT * FROM email_table WHERE username=’ “ .$abc[“name”].” ‘ “;</p>
+<pre><code>最后需要说明的是，很多人以为单引号不能包含双引号，这是错误的。就个简单的例子,输出html语句，
+</code></pre><p>echo ‘ <input type="text" name="email" id="email"> ‘; </p>
+<p>   html包含很多的双引号使用，可以用单引号包含起来，是没有问题的 。双引号虽好，能包含变量和转义字符，但是效率比单引号低，能用单引号的尽量用单引号，不可忽略的是，要注意区分英文和中文引号（dreamweave包含字符串时会高亮显示，中文则不会)。<br>  单引号里面的双引号中的变量不会解析！ </p>
+<p>一.首先想想PHP里所有的单词(其实应该叫符号)有几类.<br>1.PHP,mysql两方的关键词与函数.例如echo,print,mysql_connect等等.这些肯定不加引号的.</p>
+<p>2.常量.新手可能用得不多,常量的好处是全局性,穿透函数.速度也快些不过新手可以暂时不管常量这玩意儿.</p>
+<p>3.变量.前面带”$”号的就是变量.可以为变量设一个”值”,例如一串字符,一个数字,逻辑(真/假)值等.也可以表示一组值(数组,对象等)</p>
+<p>4.值.通常要给常量与变量设置值.赋值语句$a=\’abc\’中,右边的\’abc\’即为值.</p>
+<p>5.函数的参数(在括号里的).可以是常量,变量,值三种.</p>
+<p>变量(常量)与值的关系正如下列各种情况.</p>
+<p>“颜色”与”红”,</p>
+<p>“长度”与100,</p>
+<p>“日期”与2007年10月25号”</p>
+<p>二.什么情况下用PHP引号</p>
+<p>其实只有第4项”值”需要用到引号,函数的里也只有值要用引号.并且只有字符串(日期值可以当成字符串)内容需要用到引号.数字(可用可不用),真假(不能用)例外.</p>
+<p>例子</p>
+<p>三.单引号与双引号的区别</p>
+<p>一般情况下两者是通用的.但双引号内部变量会解析,单引号则不解析.</p>
+<p>例子</p>
+<p>所以如果内部只有纯字符串的时候,用单引号(速度快),内部有别的东西(如变量)的时候,用双号引更好点.</p>
+<p>四.字符串内部如果出现PHP引号怎么办–关于转义.</p>
+<p>比如我们想输出: 我”是\’天才</p>
+<p>这时候就必须用到转义了.转义即把本来有作用的符号转成无意义的字符.</p>
+<p>这样就正常了,因为号把它后面的任何字符都转成无意义的符号.在这里来说,PHP解析器根本没把号后面的引号当成引号来看待.</p>
+<p>同样的,还可以转义分号,$符号等特殊符号.</p>
+<p>五.字符串的连接.</p>
+<p>这是个麻烦的问题.一般来说,变量值,直接包含在双引号中就可以了.另外字符串的叠加用”.”字符.</p>
+<p>在复杂的情况里可以用大括号来包含,PHP便知道这是一个完整的东西,里面的引号不会影响到外面的引号关系.</p>
+<p>与html的混合也很简单,最好养成HTML中全部用双引号,PHP中尽量用单引号的习惯.这样方便把大段的HTML代码复制过来,只要头尾加上单引号就是一个正确的字符串了.几百行的HTML代码也不用担心PHP引号错乱.</p>
+<p>总结一下PHP引号使用原则</p>
+<p>1.字符串的值用引号</p>
+<p>2.PHP中尽量用单引号,HTML代码全部用双引号</p>
+<p>3.在包含变量的时候,用双引号可以简化操作</p>
+<p>4.复杂的情况下用大括号包起来</p>
+<p>PHP引号还有一个用处就是，有的时候需要用php生成文本文件，换行符\n需要用双引号才能好使，单引号则会直接把\n当成字符输出。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/21/lesson10/" data-id="cjog2eb8h0007agqtnk7f9ypk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/02/lesson11/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          GIT的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/17/lesson9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">控制结构</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/lesson15/">vue将毫秒数转化为正常日期格式。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson14/">出现Please make sure you have the correct access rights and the repository exists.问题已解决。</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/04/lesson13/">我尝试第一个例子，但是遇到了错误：events.js:160 throw er; // Unhandled &#39;error&#39; event</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/06/lesson12/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/02/lesson11/">GIT的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">档案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
